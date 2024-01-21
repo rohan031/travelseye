@@ -1,0 +1,12 @@
+@mixin screen-40 {
+	@media (min-width: 40em) {
+		@content;
+	}
+}
+
+@mixin hover {
+	// devices that supports hover
+	@media (hover: hover) {
+		@content;
+	}
+}

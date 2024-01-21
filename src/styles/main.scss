@@ -1,0 +1,21 @@
+@use "./abstracts" as ab;
+@use "./abstracts/reset";
+
+:root {
+	--primary-500: hsl(15, 100%, 45%);
+	--primary-400: hsl(15, 100%, 60%);
+	--primary-600: hsl(15, 100%, 40%);
+
+	--white: hsl(0, 100%, 98%);
+	--dark: hsl(0, 0%, 6%);
+	--error: hsl(0, 100%, 60%);
+}
+
+body {
+	--bg: var(--white);
+	--color: var(--dark);
+
+	font-family: "Inter Variable", sans-serif;
+	background-color: var(--bg);
+	color: var(--color);
+}
