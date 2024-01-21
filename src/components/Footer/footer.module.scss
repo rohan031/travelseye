@@ -1,0 +1,112 @@
+@use "/src/styles/abstracts" as ab;
+
+.footer {
+	padding-block: 1.6rem;
+
+	.copyright {
+		text-align: center;
+		text-wrap: balance;
+
+		font-size: clamp(0.8125rem, 1.2vw, 0.9375rem);
+		margin-block: 3em 1em;
+	}
+
+	.container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1em;
+
+		font-size: clamp(0.875rem, 1.5vw, 1rem);
+
+		@include ab.screen-48 {
+			grid-template-columns: repeat(4, 1fr);
+		}
+
+		h3 {
+			font-size: clamp(1.125rem, 1.5vw, 1.25rem);
+		}
+
+		.map {
+			overflow: clip;
+		}
+
+		.address {
+			display: grid;
+			gap: 0.6em;
+
+			p {
+				display: grid;
+				gap: 0.4em;
+			}
+
+			a {
+				text-decoration: underline transparent;
+
+				&:hover {
+					text-decoration-color: currentColor;
+				}
+			}
+		}
+
+		.pages {
+			display: flex;
+			flex-direction: column;
+			gap: 0.6em;
+
+			.links {
+				list-style-type: none;
+				padding: 0;
+				margin: 0;
+
+				display: grid;
+				gap: 0.4em;
+
+				li a {
+					text-decoration: underline transparent;
+
+					&:hover {
+						text-decoration-color: currentColor;
+					}
+				}
+			}
+		}
+
+		.socials {
+			display: flex;
+			flex-direction: column;
+			gap: 0.6em;
+
+			.icons {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5em;
+
+				a {
+					transition: color 300ms;
+
+					&[data-name="facebook"]:hover {
+						color: var(--facebook);
+					}
+
+					&[data-name="twitter"]:hover {
+						color: var(--twitter);
+					}
+
+					&[data-name="whatsapp"]:hover {
+						color: var(--whatsapp);
+					}
+
+					&[data-name="linkedin"]:hover {
+						color: var(--linkedin);
+					}
+
+					svg {
+						font-size: clamp(0.875rem, 1.5vw, 1rem);
+						width: 2rem;
+						height: 2rem;
+					}
+				}
+			}
+		}
+	}
+}

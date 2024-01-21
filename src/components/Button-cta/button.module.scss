@@ -1,0 +1,40 @@
+@use "/src/styles/abstracts" as ab;
+
+.button {
+	--bg: var(--primary-500);
+	--color: var(--white);
+	--underline: transparent;
+
+	background-color: var(--bg);
+	color: var(--white);
+	text-decoration: var(--underline);
+
+	padding-inline: 1.4em;
+	padding-block: 0.3em;
+
+	font-size: 1.25rem;
+	border-radius: 0.3em;
+
+	display: inline-block;
+	cursor: pointer;
+	transition: background-color 300ms, scale 300ms;
+
+	&[data-variant="nav"] {
+		font-size: clamp(0.75rem, 1.5vw, 1rem);
+	}
+
+	&:focus {
+		--bg: var(--primary-400);
+	}
+
+	@include ab.hover {
+		&:hover {
+			--bg: var(--primary-400);
+		}
+	}
+
+	&:active {
+		--bg: var(--primary-600);
+		scale: 0.95;
+	}
+}

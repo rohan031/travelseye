@@ -1,0 +1,152 @@
+@use "/src/styles/abstracts" as ab;
+
+.nav {
+	box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+		rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+	.container {
+		padding: 1em 0.5em;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		@include ab.screen-48 {
+			padding: 1em 0.5em;
+		}
+	}
+
+	.logo {
+		cursor: context-menu;
+	}
+
+	.navLinks {
+		.toggle {
+			display: flex;
+			flex-direction: row-reverse;
+
+			@include ab.screen-48 {
+				display: none;
+			}
+
+			&:has(input:checked) + ul {
+				clip-path: inset(0);
+			}
+
+			input {
+				display: none;
+
+				&:checked + label {
+					span {
+						background-color: var(--dark);
+						height: 0.2em;
+					}
+					span:nth-child(even) {
+						visibility: hidden;
+					}
+
+					span:nth-child(1) {
+						rotate: 45deg;
+						translate: 0 0.5em;
+					}
+					span:nth-child(3) {
+						rotate: -45deg;
+						translate: 0 -0.5em;
+					}
+				}
+			}
+
+			label {
+				z-index: 50;
+				display: grid;
+				gap: 0.3em;
+				position: relative;
+
+				span {
+					width: 1.8em;
+					height: 0.15em;
+
+					display: block;
+					background-color: var(--dark);
+
+					transition: rotate 200ms, translate 200ms, visibility 50ms,
+						background-color 400ms;
+				}
+			}
+		}
+
+		.links {
+			list-style: none;
+			padding: 0;
+
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: -1em;
+			bottom: -1em;
+			background-color: #faf9f6;
+
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding-block-start: 5em;
+			gap: 3em;
+
+			position: fixed;
+
+			clip-path: inset(0 0 0 100vw);
+
+			transition: clip-path 300ms;
+			z-index: 49;
+
+			&[data-state="close"] {
+				clip-path: inset(0 0 0 100vw);
+			}
+
+			&[data-state="open"] {
+				clip-path: inset(0);
+			}
+
+			@include ab.screen-48 {
+				flex-direction: row;
+				position: static;
+				clip-path: none;
+				background-color: transparent;
+				align-items: center;
+
+				padding: 0;
+
+				&[data-state="close"] {
+					clip-path: none;
+				}
+
+				&[data-state="open"] {
+					clip-path: none;
+				}
+			}
+
+			li {
+				a {
+					color: var(--dark);
+					font-weight: 500;
+					text-decoration: underline transparent;
+					font-size: 1.5rem;
+
+					@include ab.screen-48 {
+						font-size: 1rem;
+					}
+
+					@include ab.hover {
+						&:hover {
+							text-decoration-color: currentColor;
+						}
+					}
+
+					&[data-role="button"] {
+						color: var(--white);
+					}
+				}
+			}
+		}
+	}
+}

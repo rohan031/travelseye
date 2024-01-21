@@ -1,0 +1,27 @@
+---
+import Button from "@components/Button-cta/Button.astro";
+import styles from "./hero.module.scss";
+---
+
+<div class={styles.hero}>
+	<div class={styles.image}>
+		<picture>
+			<source media="(min-width:40em)" srcset="/main/home-lg.webp" />
+			<img src="/main/home-sm.webp" alt="Travelseye" />
+		</picture>
+	</div>
+
+	<div class={styles.content}>
+		<div class="container">
+			<div class={styles.container}>
+				<h1>
+					Where Dreams Take Flight: Explore the globe with Travel Eyes
+				</h1>
+
+				<div class={styles.button}>
+					<Button variant="default">Book Now</Button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

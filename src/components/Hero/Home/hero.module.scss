@@ -1,0 +1,56 @@
+@use "/src/styles/abstracts" as ab;
+
+.hero {
+	display: grid;
+	grid-template-columns: 1fr;
+	max-height: 75dvh;
+	overflow: hidden;
+	position: relative;
+
+	> * {
+		grid-row-start: 1;
+		grid-column-start: 1;
+	}
+
+	.image {
+		img {
+			width: 100%;
+
+			@include ab.screen-75 {
+				translate: 0 -18%;
+			}
+		}
+	}
+
+	.content {
+		--overlay: var(--overlay-2);
+
+		z-index: 1;
+		background-color: var(--overlay);
+
+		.container {
+			--color: var(--white);
+
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			translate: -50% -50%;
+
+			width: min(96%, 80rem);
+
+			display: grid;
+			gap: 2em;
+
+			h1 {
+				font-size: clamp(2.5rem, 4vw, 3.75rem);
+				text-align: center;
+				text-wrap: balance;
+				color: var(--color);
+			}
+
+			.button {
+				text-align: center;
+			}
+		}
+	}
+}

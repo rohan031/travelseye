@@ -1,7 +1,30 @@
 ---
-import HomeLayout from "../layout/HomeLayout.astro";
+import Button from "@components/Button-cta/Button.astro";
+import HomeLayout from "@layout/HomeLayout.astro";
+
+import { whyUs as info, places } from "@data/cards.js";
+import InfoCard from "@components/Cards/Why-us/Why-us.astro";
+import PlaceCard from "@components/Cards/Places/Place.astro";
+import TravelWithUs from "@components/Travel/TravelWithUs.astro";
+import Hero from "@components/Hero/Home/Hero.astro";
 
 const pageTitle = "Traveleyes - Home";
 ---
 
-<HomeLayout pageTitle={pageTitle}>my name is rohan</HomeLayout>
+<HomeLayout pageTitle={pageTitle}>
+	<Hero />
+
+	<!-- {
+		info.map((card) => {
+			return <InfoCard data={card} />;
+		})
+	}
+
+	{
+		places.map((place) => {
+			return <PlaceCard data={place} />;
+		})
+	} -->
+
+	<TravelWithUs />
+</HomeLayout>

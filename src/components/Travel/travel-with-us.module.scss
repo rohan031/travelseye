@@ -1,0 +1,57 @@
+@use "/src/styles/abstracts" as ab;
+
+.card {
+	--overlay: var(--overlay-2);
+
+	background-image: linear-gradient(var(--overlay), var(--overlay)),
+		url("/main/card-lg.webp");
+	background-position: center;
+
+	background-size: cover;
+	min-height: 18rem;
+	max-height: 23rem;
+
+	@include ab.screen-40 {
+		height: 20rem;
+		background-image: linear-gradient(var(--overlay), var(--overlay)),
+			url("/main/card-lg.webp");
+	}
+
+	.container {
+		padding: 2em 0;
+		display: grid;
+		height: 20rem;
+
+		@include ab.screen-40 {
+			height: 18rem;
+		}
+
+		p {
+			--color: var(--white);
+
+			font-size: clamp(2.5rem, 4vw, 3.75rem);
+			font-weight: 600;
+
+			color: var(--color);
+			line-height: normal;
+
+			text-align: center;
+			text-wrap: balance;
+
+			@include ab.screen-40 {
+				max-width: 34rem;
+				text-align: left;
+			}
+		}
+
+		.button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			@include ab.screen-40 {
+				justify-content: flex-end;
+			}
+		}
+	}
+}

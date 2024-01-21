@@ -1,0 +1,143 @@
+@use "/src/styles/abstracts" as ab;
+
+.card {
+	--padding: 0.5rem 1.5rem;
+	--radius: 0.75rem;
+
+	margin-block: 15rem;
+	margin-inline: auto;
+
+	@include ab.hover {
+		margin-block: 0 10rem;
+	}
+
+	width: min(100%, 16rem);
+	position: relative;
+
+	&:hover {
+		// animation
+		.heading,
+		.text {
+			scale: 1;
+			opacity: 1;
+		}
+
+		.heading {
+			translate: 0 -100%;
+		}
+
+		.text {
+			translate: 0 75%;
+		}
+	}
+
+	.heading,
+	.text {
+		position: absolute;
+		z-index: -2;
+
+		box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+			rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+		border-radius: var(--radius);
+
+		@include ab.hover {
+			scale: 0.5;
+			opacity: 0;
+		}
+
+		transition: scale 300ms, opacity 300ms;
+	}
+
+	.heading {
+		--padding: 1rem 1.5rem;
+
+		padding: var(--padding);
+		translate: 0 -100%;
+		inset: 13% 0.2rem;
+
+		@include ab.hover {
+			translate: 0 0;
+		}
+
+		h3 {
+			text-align: center;
+			text-wrap: balance;
+		}
+	}
+
+	.info {
+		--color: var(--primary-500);
+		--bg: var(--primary-hover-2);
+
+		@include ab.hover {
+			--bg: var(--primary-hover-1);
+
+			img {
+				scale: 0.8;
+
+				transition: scale 300ms;
+			}
+
+			&:hover {
+				--bg: var(--primary-hover-2);
+
+				img {
+					scale: 1;
+				}
+			}
+		}
+
+		padding: var(--padding);
+		box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+
+		border-radius: var(--radius);
+		cursor: pointer;
+
+		background-color: var(--bg);
+		transition: background-color 300ms;
+		position: relative;
+
+		&::before {
+			position: absolute;
+			content: "";
+			inset: 0;
+			background-color: var(--white);
+			border-radius: inherit;
+			z-index: -1;
+		}
+
+		span {
+			--shadow: var(--primary-400);
+
+			font-size: 4rem;
+			font-weight: 700;
+
+			text-shadow: 2px 2px var(--shadow);
+
+			color: var(--color);
+		}
+	}
+
+	.text {
+		--padding: 1.5rem;
+
+		padding: var(--padding);
+		border-radius: 0 0 var(--radius) var(--radius);
+		inset: -1rem 0.2rem;
+		translate: 0 75%;
+
+		@include ab.hover {
+			translate: 0 0;
+		}
+
+		p {
+			padding: 0.5rem 0;
+			text-align: center;
+			text-wrap: wrap;
+		}
+	}
+}

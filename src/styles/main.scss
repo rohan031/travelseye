@@ -2,13 +2,25 @@
 @use "./abstracts/reset";
 
 :root {
+	--primary-400: hsl(15, 100%, 55%);
 	--primary-500: hsl(15, 100%, 45%);
-	--primary-400: hsl(15, 100%, 60%);
 	--primary-600: hsl(15, 100%, 40%);
+
+	--primary-hover-1: hsl(15, 100%, 55%, 0.1);
+	--primary-hover-2: hsl(15, 100%, 55%, 0.3);
+
+	--overlay-1: hsl(0, 0%, 0%, 0.4);
+	--overlay-2: hsl(0, 0%, 0%, 0.6);
+	--overlay-3: hsl(0, 0%, 0%, 0.7);
 
 	--white: hsl(0, 100%, 98%);
 	--dark: hsl(0, 0%, 6%);
 	--error: hsl(0, 100%, 60%);
+
+	--linkedin: hsl(201, 100%, 35%);
+	--twitter: hsl(204, 88%, 53%);
+	--facebook: hsl(221, 40%, 47%);
+	--whatsapp: hsl(146, 100%, 43%);
 }
 
 body {
@@ -18,4 +30,12 @@ body {
 	font-family: "Inter Variable", sans-serif;
 	background-color: var(--bg);
 	color: var(--color);
+}
+
+.container {
+	width: min(96%, 80rem);
+	margin-inline: auto;
+}
+
+.container-full {
 }

@@ -1,0 +1,32 @@
+---
+import styles from "./why-us.module.scss";
+
+interface Data {
+	count: string;
+	icon: string;
+	heading: string;
+	text: string;
+}
+
+interface Props {
+	data: Data;
+}
+
+const { count, icon, heading, text } = Astro.props.data;
+---
+
+<div class={styles.card}>
+	<div class={styles.heading}>
+		<h3>{heading}</h3>
+	</div>
+
+	<div class={styles.info}>
+		<span>{count}</span>
+
+		<img src={icon} alt="icon" width="80" height="80" />
+	</div>
+
+	<div class={styles.text}>
+		<p>{text}</p>
+	</div>
+</div>

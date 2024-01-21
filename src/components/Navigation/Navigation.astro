@@ -1,21 +1,54 @@
 ---
-
+import Button from "@components/Button-cta/Button.astro";
+import styles from "./navigation.module.scss";
 ---
 
 <>
-	<nav>
-		Navigation bar
+	<nav class={styles.nav}>
+		<div class="container">
+			<div class={styles.container}>
+				<div class={styles.logo}>
+					<picture>
+						<source
+							media="(min-width:40em)"
+							srcset="/logo-lg.svg"
+						/>
+						<img
+							src="/logo-sm.svg"
+							alt="Travelseye"
+							width="225"
+							height="59"
+						/>
+					</picture>
+				</div>
 
-		<ul>
-			<li>
-				<a href="/">Home</a>
-			</li>
-			<li>
-				<a href="/about-us">About Us</a>
-			</li>
-			<li>
-				<a href="/contact-us">Contact Us</a>
-			</li>
-		</ul>
+				<div class={styles.navLinks}>
+					<div class={styles.toggle}>
+						<input id="nav-toggle" type="checkbox" />
+						<label for="nav-toggle">
+							<span></span>
+							<span></span>
+							<span></span>
+						</label>
+					</div>
+
+					<ul class={`${styles.links} nav-links`} data-state="close">
+						<li>
+							<a href="/">Home</a>
+						</li>
+						<li>
+							<a href="/about-us/">About Us</a>
+						</li>
+						<li>
+							<a href="/contact-us/">Contact Us</a>
+						</li>
+
+						<li>
+							<Button variant="nav">Enquire Now</Button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</nav>
 </>

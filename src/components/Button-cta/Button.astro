@@ -1,5 +1,19 @@
 ---
+import styles from "./button.module.scss";
 
+interface Props {
+	variant?: string;
+}
+
+const { variant = "default" } = Astro.props;
 ---
 
-<button>Button</button>
+<a
+	href="https://traveleyes.page.link/Website"
+	target="_blank"
+	class={styles.button}
+	data-variant={variant}
+	data-role="button"
+>
+	<slot />
+</a>
