@@ -1,0 +1,29 @@
+@use "/src/styles/abstracts" as ab;
+
+.why {
+	padding-block: 3em;
+
+	.container {
+		display: grid;
+		gap: 2em;
+	}
+
+	.heading {
+		text-align: center;
+	}
+
+	.items {
+		display: grid;
+		gap: 15em;
+		margin-block: 5em 10em;
+
+		@include ab.hover {
+			gap: 10em;
+		}
+
+		@include ab.screen-48 {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 1em;
+		}
+	}
+}

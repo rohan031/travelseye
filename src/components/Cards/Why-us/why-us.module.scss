@@ -1,18 +1,30 @@
 @use "/src/styles/abstracts" as ab;
 
+@keyframes card-show {
+	to {
+		opacity: 1;
+		scale: 1;
+	}
+}
+
 .card {
 	--padding: 0.5rem 1.5rem;
 	--radius: 0.75rem;
 
-	margin-block: 15rem;
 	margin-inline: auto;
-
-	@include ab.hover {
-		margin-block: 0 10rem;
-	}
 
 	width: min(100%, 16rem);
 	position: relative;
+
+	@include ab.scroll-animation {
+		opacity: 0;
+		scale: 0.5;
+
+		animation: card-show linear forwards;
+		animation-timeline: view();
+		animation-range-start: cover;
+		animation-range-end: contain 40%;
+	}
 
 	&:hover {
 		// animation
@@ -138,6 +150,10 @@
 			padding: 0.5rem 0;
 			text-align: center;
 			text-wrap: wrap;
+
+			@include ab.screen-48 {
+				font-size: clamp(0.9rem, 1.2vw, 1rem);
+			}
 		}
 	}
 }

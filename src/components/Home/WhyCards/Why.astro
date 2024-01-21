@@ -1,0 +1,22 @@
+---
+import styles from "./why.module.scss";
+
+import { whyUs as info } from "../../../data/cards";
+import InfoCard from "../../Cards/Why-us/Why-us.astro";
+---
+
+<div class={styles.why}>
+	<div class="container">
+		<div class={styles.container}>
+			<h2 class={styles.heading}>Why Us?</h2>
+
+			<div class={styles.items}>
+				{
+					info.map((card) => {
+						return <InfoCard data={card} />;
+					})
+				}
+			</div>
+		</div>
+	</div>
+</div>

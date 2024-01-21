@@ -7,12 +7,15 @@ import InfoCard from "@components/Cards/Why-us/Why-us.astro";
 import PlaceCard from "@components/Cards/Places/Place.astro";
 import TravelWithUs from "@components/Travel/TravelWithUs.astro";
 import Hero from "@components/Hero/Home/Hero.astro";
+import Why from "@components/Home/WhyCards/Why.astro";
 
 const pageTitle = "Traveleyes - Home";
 ---
 
 <HomeLayout pageTitle={pageTitle}>
 	<Hero />
+
+	<Why />
 
 	<!-- {
 		info.map((card) => {

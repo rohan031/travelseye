@@ -37,5 +37,13 @@ body {
 	margin-inline: auto;
 }
 
+h1 {
+	font-size: clamp(2.5rem, 4vw, 3.75rem);
+}
+
+h2 {
+	font-size: clamp(2rem, 3.25vw, 3rem);
+}
+
 .container-full {
 }
