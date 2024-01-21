@@ -3,7 +3,7 @@
 .hero {
 	display: grid;
 	grid-template-columns: 1fr;
-	max-height: 75dvh;
+	max-height: max(75dvh, 40rem);
 	overflow: hidden;
 	position: relative;
 
