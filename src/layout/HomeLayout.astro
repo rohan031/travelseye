@@ -1,6 +1,10 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import "../styles/main.scss";
 import "@fontsource-variable/inter";
+
+import Navigation from "../components/Navigation/Navigation.astro";
+import Footer from "../components/Footer/Footer.astro";
 
 const { pageTitle } = Astro.props;
 ---
@@ -12,8 +16,12 @@ const { pageTitle } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+		<ViewTransitions />
 	</head>
 	<body>
+		<Navigation />
 		<slot />
+
+		<Footer />
 	</body>
 </html>
