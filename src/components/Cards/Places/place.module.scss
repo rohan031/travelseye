@@ -11,6 +11,8 @@
 	width: min(25rem, 100%);
 	aspect-ratio: 1 / 1;
 
+	margin-inline: auto;
+
 	display: grid;
 	grid-template-columns: 1fr;
 	overflow: clip;
@@ -69,6 +71,18 @@
 			font-size: 2rem;
 
 			text-shadow: 2px 2px var(--primary-hover-2);
+		}
+
+		h4 {
+			position: absolute;
+			bottom: 0;
+			padding: 1.5rem;
+			right: 0;
+
+			font-size: 1rem;
+			color: var(--primary-400);
+
+			text-shadow: 1px 1px var(--dark);
 		}
 	}
 

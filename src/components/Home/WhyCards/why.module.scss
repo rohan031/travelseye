@@ -24,6 +24,9 @@
 		@include ab.screen-48 {
 			grid-template-columns: repeat(3, 1fr);
 			gap: 1em;
+
+			> div {
+			}
 		}
 	}
 }

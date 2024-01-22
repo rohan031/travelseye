@@ -16,6 +16,8 @@
 		display: grid;
 		gap: 2em;
 
+		grid-template-columns: repeat(auto-fit, minmax(min(18rem, 100%), 1fr));
+
 		@include ab.screen-64 {
 			grid-template-columns: repeat(3, 1fr);
 			gap: 1.5em;
@@ -26,7 +28,7 @@
 						scale: 0.9;
 
 						&:hover {
-							scale: 1;
+							scale: 1.1;
 						}
 					}
 				}
