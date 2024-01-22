@@ -1,0 +1,33 @@
+---
+import styles from "./contact_form.module.scss";
+
+---
+
+<div class="container">
+    <div class={styles.container}>
+        <div class={styles.heading}>
+            <p>Still have any doubts?</p>
+        </div>
+        <div class={styles.content}>
+                <img src="/main/journey.svg" alt="journey" />
+                <div class={styles.contact_from}>
+                    <from>
+                        <p>Enquire Now</p>
+                        <input type="text" Placeholder="Name"/>
+                        <input type="text" Placeholder="Email"/>
+                        <input type="number" Placeholder="Mobile"/>
+                        <input type="text" Placeholder="Business Name"/>
+                        <select >
+                            <option value="0">What Are You Looking For?</option>
+                            <option value="1">Ticket</option>
+                            <option value="2">Booking</option>
+                            <option value="3">Package</option>
+                            <option value="4">Trip</option>
+                        </select>
+                        <label >Disclaimer: By clicking submit, you agree to receive communications from the business in accordance with our Privacy Policy .</label>
+                        <button type="button" >Submit</button>
+                    </form>
+                </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+@use "/src/styles/abstracts" as ab;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 2em 0em 2em 0em;
+    .heading {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @include ab.screen-40 {
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        img {
+            width: clamp(21em, 37vw, 37em);
+        }
+        .contact_from {
+            border-radius: 1.06875rem;
+            background: rgba(0, 32, 64, 0.4);
+            backdrop-filter: blur(7.5px);
+            max-width: 28.75rem;
+            from {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                padding: 2em 2em 1em 2em;
+                gap: 0.8em;
+                p {
+                    color: #fff;
+                    font-weight: 700;
+                    font-size: clamp(1.4rem, 2vw, 2rem);
+                }
+                input {
+                    border-radius: 0.2em;
+                    border: none;
+                    padding: clamp(0.2em, 1vw, 0.6em);
+                    width: 90%;
+                }
+                select {
+                    border-radius: 0.2em;
+                    border: none;
+                    padding: clamp(0.2em, 1vw, 0.6em);
+                    width: 90%;
+                }
+                label {
+                    font-weight: 500;
+                    color: #fff;
+                    font-size: clamp(0.6rem, 8vw, 0.8rem);
+                }
+                button {
+                    background-color: #ec4731;
+                    color: white;
+                    font-size: clamp(1.2rem, 2vw, 1.7rem);
+                    border: none;
+                    border-radius: 0.2em;
+                    padding: 0.3em 2.2em 0.3em 2.2em;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

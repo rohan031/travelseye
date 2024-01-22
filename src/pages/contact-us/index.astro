@@ -1,8 +1,10 @@
 ---
 import TravelWithUs from "@components/Travel/TravelWithUs.astro";
 import HomeLayout from "../../layout/HomeLayout.astro";
-
+import Contact from "@components/Contact_form/Contact_form.astro"
 const pageTitle = "Traveleyes - Contact Us";
 ---
 
-<HomeLayout pageTitle={pageTitle}><TravelWithUs /></HomeLayout>
+<HomeLayout pageTitle={pageTitle}>
+<Contact />
+    <TravelWithUs /></HomeLayout>
