@@ -1,13 +1,10 @@
 ---
-import Button from "@components/Button-cta/Button.astro";
 import HomeLayout from "@layout/HomeLayout.astro";
 
-import { whyUs as info, places } from "@data/cards.js";
-import InfoCard from "@components/Cards/Why-us/Why-us.astro";
-import PlaceCard from "@components/Cards/Places/Place.astro";
 import TravelWithUs from "@components/Travel/TravelWithUs.astro";
 import Hero from "@components/Hero/Home/Hero.astro";
 import Why from "@components/Home/WhyCards/Why.astro";
+import Info from "@components/Home/Info/Info.astro";
 
 const pageTitle = "Traveleyes - Home";
 ---
@@ -16,6 +13,8 @@ const pageTitle = "Traveleyes - Home";
 	<Hero />
 
 	<Why />
+
+	<Info />
 
 	<!-- {
 		info.map((card) => {

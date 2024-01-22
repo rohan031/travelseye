@@ -14,7 +14,7 @@ interface Props {
 const { img, title, text } = Astro.props.data;
 ---
 
-<div class={styles.card}>
+<div class={`${styles.card} place-card`}>
 	<div class={styles.image}>
 		<img src={img} alt="title" height="400" width="400" />
 

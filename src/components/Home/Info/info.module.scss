@@ -1,0 +1,36 @@
+@use "/src/styles/abstracts" as ab;
+
+.info {
+	padding-block: 0 3em;
+
+	.container {
+		display: grid;
+		gap: 4em;
+	}
+
+	.heading {
+		text-align: center;
+	}
+
+	.items {
+		display: grid;
+		gap: 2em;
+
+		@include ab.screen-64 {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 1.5em;
+
+			@include ab.hover {
+				&:hover {
+					> div {
+						scale: 0.9;
+
+						&:hover {
+							scale: 1;
+						}
+					}
+				}
+			}
+		}
+	}
+}
