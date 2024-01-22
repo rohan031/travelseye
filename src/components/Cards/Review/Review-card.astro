@@ -1,0 +1,18 @@
+---
+import styles from "./review-card.module.scss";
+
+interface Props {
+	data: {
+		name: string;
+		review: string;
+	};
+}
+
+const { review, name } = Astro.props.data;
+---
+
+<div class={styles.card}>
+	<p class={styles.review}>{review}</p>
+
+	<p class={styles.name}>{name}</p>
+</div>

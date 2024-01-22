@@ -3,6 +3,7 @@ import styles from "./info.module.scss";
 
 import { places } from "../../../data/cards";
 import PlaceCard from "../../Cards/Places/Place.astro";
+import Button from "@components/Button-cta/Button.astro";
 ---
 
 <div class={styles.info}>
@@ -16,6 +17,10 @@ import PlaceCard from "../../Cards/Places/Place.astro";
 						return <PlaceCard data={place} />;
 					})
 				}
+			</div>
+
+			<div class={styles.button}>
+				<Button variant="default">Book Today</Button>
 			</div>
 		</div>
 	</div>

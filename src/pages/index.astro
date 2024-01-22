@@ -5,6 +5,9 @@ import TravelWithUs from "@components/Travel/TravelWithUs.astro";
 import Hero from "@components/Hero/Home/Hero.astro";
 import Why from "@components/Home/WhyCards/Why.astro";
 import Info from "@components/Home/Info/Info.astro";
+import Trust from "@components/Home/Trust/Trust.astro";
+import Button from "@components/Button-cta/Button.astro";
+import Review from "@components/Home/Review/Review.astro";
 
 const pageTitle = "Traveleyes - Home";
 ---
@@ -14,7 +17,15 @@ const pageTitle = "Traveleyes - Home";
 
 	<Why />
 
+	<Trust />
+
+	<div style="text-align: center; margin-block-end: 5em;">
+		<Button variant="default">Book Today</Button>
+	</div>
+
 	<Info />
+
+	<Review />
 
 	<!-- {
 		info.map((card) => {
