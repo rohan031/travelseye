@@ -29,7 +29,7 @@
 		animation: card-show linear forwards;
 		animation-timeline: view();
 		animation-range-start: cover 0%;
-		animation-range-end: contain 50%;
+		animation-range-end: contain 35%;
 	}
 
 	@include ab.hover {
