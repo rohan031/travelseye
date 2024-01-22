@@ -1,0 +1,33 @@
+@use "/src/styles/abstracts" as ab;
+.aboutcontent {
+    width: min(90%, 70rem);
+    margin-inline: auto;
+    padding-top: clamp(2em, 4vw, 4em);
+    padding-bottom: clamp(2em, 4vw, 4em);
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    .heading {
+        font-size: 1.25rem;
+        font-weight: 600;
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        p {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        .subcontent {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8em;
+            margin-top: 0.5em;
+            p {
+                font-size: 1.25rem;
+                font-weight: 600;
+            }
+        }
+    }
+}
