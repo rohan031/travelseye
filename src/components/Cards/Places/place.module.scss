@@ -22,7 +22,7 @@
 	position: relative;
 	transition: scale 300ms;
 
-	border-radius: 0.375rem;
+	border-radius: 0.75rem;
 
 	@include ab.scroll-animation {
 		opacity: 0;

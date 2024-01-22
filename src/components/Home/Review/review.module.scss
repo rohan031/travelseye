@@ -1,0 +1,33 @@
+@use "/src/styles/abstracts" as ab;
+
+.review {
+	margin-block: 2em 5em;
+
+	.container {
+		display: grid;
+		gap: 2.5em;
+
+		.heading {
+			font-size: 2rem;
+			text-align: center;
+			text-wrap: balance;
+		}
+
+		.cards {
+			display: grid;
+			grid-template-columns: repeat(6, min(23rem, 100%));
+			gap: 3em;
+
+			overflow-y: scroll;
+			padding-block: 1em;
+			padding-inline: 0.5em 0;
+
+			overscroll-behavior-inline: contain;
+			scroll-snap-type: inline mandatory;
+
+			> * {
+				scroll-snap-align: center;
+			}
+		}
+	}
+}

@@ -16,7 +16,7 @@
 	display: grid;
 	grid-template-columns: 1fr;
 	overflow: clip;
-	min-height: 30rem;
+	min-height: 25rem;
 
 	@include ab.screen-48 {
 		background-position: center 8%;

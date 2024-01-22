@@ -1,0 +1,23 @@
+---
+import styles from "./review.module.scss";
+
+import { reviews } from "../../../data/cards";
+import ReviewCard from "../../Cards/Review/Review-card.astro";
+---
+
+<div class={styles.review}>
+    <div class="container">
+
+        <div class={styles.container}>
+            <h2 class={styles.heading}>Hear from Happy Travelers: What Our Clients Loved</h2>
+        
+            <div class={`${styles.cards} horizontal-scrollbar`}>
+                {
+                    reviews.map(review => {
+                        return <ReviewCard data={review} />
+                    })
+                }
+            </div>
+        </div>
+    </div>
+</div>
