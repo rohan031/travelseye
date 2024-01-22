@@ -1,0 +1,44 @@
+@use "/src/styles/abstracts" as ab;
+
+.trust {
+	--overlay: var(--overlay-3);
+
+	margin-block-end: 4em;
+
+	background-image: linear-gradient(var(--overlay), var(--overlay)),
+		url("/public/main/info.webp");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+	padding-block: 5em;
+
+	display: grid;
+	grid-template-columns: 1fr;
+	overflow: clip;
+	min-height: 30rem;
+
+	@include ab.screen-48 {
+		background-position: center 8%;
+	}
+
+	> * {
+		grid-row-start: 1;
+		grid-column-start: 1;
+	}
+
+	.content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.container {
+			height: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: space-around;
+			gap: 5em;
+		}
+	}
+}
