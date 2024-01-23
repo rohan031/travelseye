@@ -15,6 +15,23 @@ const { pageTitle } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+
+		<!-- Google tag (gtag.js) -->
+		<script
+			type="text/partytown"
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-KKQB9T0XZ4"
+		></script>
+		<script type="text/partytown">
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-KKQB9T0XZ4");
+		</script>
+
 		<title>{pageTitle}</title>
 		<ViewTransitions />
 	</head>
