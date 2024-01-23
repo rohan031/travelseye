@@ -3,10 +3,10 @@
 .trust {
 	--overlay: var(--overlay-3);
 
-	margin-block-end: 4em;
+	// margin-block-end: 4em;
 
 	background-image: linear-gradient(var(--overlay), var(--overlay)),
-		url("/public/main/info.webp");
+		url("/main/info.webp");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;

@@ -1,0 +1,44 @@
+@use "/src/styles/abstracts" as ab;
+
+.hero {
+	--overlay: var(--overlay-1);
+
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+
+	align-items: center;
+
+	overflow: clip;
+	min-height: 28rem;
+
+	display: grid;
+
+	&.about {
+		background-image: linear-gradient(var(--overlay), var(--overlay)),
+			url("/main/about-us.webp");
+	}
+
+	&.contact {
+		background-image: linear-gradient(var(--overlay), var(--overlay)),
+			url("/main/contact-us.webp");
+
+		min-height: 32rem;
+	}
+
+	@include ab.screen-48 {
+		background-position: center center;
+	}
+
+	> * {
+		grid-row-start: 1;
+		grid-column-start: 1;
+	}
+
+	h1 {
+		--color: var(--white);
+
+		color: var(--color);
+		text-align: center;
+	}
+}

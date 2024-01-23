@@ -1,10 +1,14 @@
 ---
 import TravelWithUs from "@components/Travel/TravelWithUs.astro";
 import HomeLayout from "../../layout/HomeLayout.astro";
-import Content from "@components/About_content/Content.astro"
+import Content from "@components/About_content/Content.astro";
+import Hero from "@components/Hero/common/Hero.astro";
+
 const pageTitle = "Traveleyes - About Us";
 ---
 
 <HomeLayout pageTitle={pageTitle}>
-<Content />
-    <TravelWithUs /></HomeLayout>
+	<Hero type="about">About Us</Hero>
+	<Content />
+	<TravelWithUs />
+</HomeLayout>

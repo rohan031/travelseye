@@ -1,0 +1,15 @@
+---
+import styles from "./hero.module.scss";
+
+interface Props {
+	type: string;
+}
+
+const { type } = Astro.props;
+---
+
+<div
+	class={`${styles.hero} ${type === "about" ? styles.about : styles.contact}`}
+>
+	<h1><slot /></h1>
+</div>
