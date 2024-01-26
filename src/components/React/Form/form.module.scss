@@ -82,3 +82,87 @@
 		}
 	}
 }
+
+.modal {
+	--overlay: var(--overlay-3);
+
+	inline-size: min(90%, 40ch);
+	border: transparent;
+	border-radius: 0.75rem;
+	padding: 1em;
+
+	&::backdrop {
+		background-color: var(--overlay);
+	}
+
+	.modal {
+		display: grid;
+		gap: 1em;
+		inline-size: 100%;
+	}
+
+	.menu {
+		// outline: 2px solid red;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		img {
+			inline-size: 10em;
+		}
+
+		button {
+			background-color: transparent;
+			border: transparent;
+			cursor: pointer;
+
+			img {
+				inline-size: 1em;
+			}
+		}
+	}
+
+	.text {
+		font-size: 0.9rem;
+		font-weight: 500;
+		text-wrap: balance;
+	}
+
+	.button {
+		text-align: end;
+
+		button {
+			--bg: var(--primary-500);
+			--color: var(--white);
+
+			background-color: var(--bg);
+			color: var(--color);
+
+			border: transparent;
+			border-radius: 0.2em;
+
+			font-size: 1rem;
+
+			padding-inline: 1.8em;
+			padding-block: 0.3em;
+
+			font-weight: 600;
+			cursor: pointer;
+
+			&:focus {
+				--bg: var(--primary-400);
+			}
+
+			@include ab.hover {
+				&:hover {
+					--bg: var(--primary-400);
+				}
+			}
+
+			&:active {
+				--bg: var(--primary-600);
+				scale: 0.95;
+			}
+		}
+	}
+}
