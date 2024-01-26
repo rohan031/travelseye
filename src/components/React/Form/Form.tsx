@@ -12,6 +12,8 @@ export default function Form() {
 		package: "0",
 	});
 
+	const [loading, setLoading] = useState(false);
+
 	const handleChange = (
 		e:
 			| React.ChangeEvent<HTMLInputElement>
@@ -27,12 +29,41 @@ export default function Form() {
 
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+		setLoading(true);
 
-		console.log(details);
-		fetch("/api/forms")
-			.then((res) => res.json())
-			.then((res) => console.log(res))
-			.catch((err) => console.error(err));
+		const inputDetails = {
+			...details,
+			package: packages[+details.package],
+		};
+
+		var xhr = new XMLHttpRequest();
+		xhr.open("POST", "/.netlify/functions/form");
+		xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+		xhr.send(JSON.stringify(inputDetails));
+
+		xhr.onload = function () {
+			const response = JSON.parse(xhr.responseText);
+
+			if (xhr.status === 200) {
+				// The request was successful
+				console.log(response);
+				console.log("success");
+				alert("Successfully received your information.");
+			} else {
+				// The request failed
+				console.log("fail");
+				alert("Can't process your req right now");
+			}
+
+			setDetails({
+				name: "",
+				email: "",
+				mobile: "",
+				business: "",
+				package: "0",
+			});
+			setLoading(false);
+		};
 	};
 
 	return (
@@ -47,6 +78,7 @@ export default function Form() {
 					value={details.name}
 					name="name"
 					onChange={handleChange}
+					disabled={loading}
 				/>
 
 				<input
@@ -56,6 +88,7 @@ export default function Form() {
 					value={details.email}
 					name="email"
 					onChange={handleChange}
+					disabled={loading}
 				/>
 
 				<input
@@ -67,6 +100,7 @@ export default function Form() {
 					required
 					name="mobile"
 					onChange={handleChange}
+					disabled={loading}
 				/>
 
 				<input
@@ -75,6 +109,7 @@ export default function Form() {
 					value={details.business}
 					name="business"
 					onChange={handleChange}
+					disabled={loading}
 				/>
 
 				<select
@@ -82,6 +117,7 @@ export default function Form() {
 					value={details.business}
 					name="package"
 					onChange={handleChange}
+					disabled={loading}
 				>
 					<option value="-1" disabled>
 						What Are You Looking For?
@@ -98,7 +134,9 @@ export default function Form() {
 					Privacy Policy .
 				</p>
 
-				<button type="submit">Submit</button>
+				<button type="submit" disabled={loading}>
+					{loading ? "Submitting..." : "Submit"}
+				</button>
 			</form>
 		</div>
 	);

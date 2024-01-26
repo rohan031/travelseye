@@ -74,6 +74,11 @@
 				--bg: var(--primary-600);
 				scale: 0.95;
 			}
+
+			&:disabled {
+				--bg: white;
+				--color: var(--primary-400);
+			}
 		}
 	}
 }
