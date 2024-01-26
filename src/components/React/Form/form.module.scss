@@ -1,0 +1,79 @@
+@use "/src/styles/abstracts" as ab;
+
+.contact_from {
+	--color: var(--white);
+
+	border-radius: 1.06875rem;
+	background: rgba(0, 32, 64, 0.4);
+	backdrop-filter: blur(7.5px);
+	max-width: 28.75rem;
+
+	form {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		padding: 2em;
+		gap: 0.8em;
+
+		h3 {
+			color: var(--color);
+			font-weight: 700;
+			font-size: clamp(1.4rem, 1.85vw, 1.6rem);
+		}
+
+		input {
+			border-radius: 0.2em;
+			border: none;
+			padding: clamp(0.2em, 1vw, 0.6em);
+			width: 90%;
+		}
+
+		select {
+			border-radius: 0.2em;
+			border: none;
+			padding: clamp(0.2em, 1vw, 0.6em);
+			width: 90%;
+		}
+
+		.disclaimer {
+			color: var(--color);
+			font-size: 0.75rem;
+
+			width: 90%;
+		}
+
+		button {
+			--bg: var(--primary-500);
+			--color: var(--white);
+
+			background-color: var(--bg);
+			color: var(--color);
+
+			border: transparent;
+			border-radius: 0.2em;
+
+			font-size: 1.25rem;
+
+			padding-inline: 1.8em;
+			padding-block: 0.3em;
+
+			font-weight: 600;
+			cursor: pointer;
+
+			&:focus {
+				--bg: var(--primary-400);
+			}
+
+			@include ab.hover {
+				&:hover {
+					--bg: var(--primary-400);
+				}
+			}
+
+			&:active {
+				--bg: var(--primary-600);
+				scale: 0.95;
+			}
+		}
+	}
+}
