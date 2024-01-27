@@ -79,13 +79,13 @@ export default function Form() {
 				);
 			})
 			.finally(() => {
-				// setDetails({
-				// 	name: "",
-				// 	email: "",
-				// 	mobile: "",
-				// 	business: "",
-				// 	package: "0",
-				// });
+				setDetails({
+					name: "",
+					email: "",
+					mobile: "",
+					business: "",
+					package: "0",
+				});
 
 				modalRef.current?.showModal();
 				setLoading(false);
