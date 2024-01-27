@@ -192,8 +192,6 @@ export default function Form() {
 					</button>
 				</form>
 			</div>
-
-			<button onClick={() => modalRef.current?.showModal()}>open</button>
 		</>
 	);
 }
