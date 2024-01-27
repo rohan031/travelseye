@@ -84,25 +84,27 @@
 }
 
 .modal {
-	--overlay: var(--overlay-3);
+	box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+		rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 
 	inline-size: min(90%, 40ch);
 	border: transparent;
 	border-radius: 0.75rem;
-	padding: 1em;
+	padding: 1.5em;
 
 	&::backdrop {
+		--overlay: hsl(0, 0%, 0%, 0.8);
+
 		background-color: var(--overlay);
+		backdrop-filter: blur(3px);
 	}
 
-	.modal {
+	.container {
 		display: grid;
 		gap: 1em;
-		inline-size: 100%;
 	}
 
 	.menu {
-		// outline: 2px solid red;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;

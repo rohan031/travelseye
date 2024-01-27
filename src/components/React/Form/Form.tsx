@@ -100,7 +100,7 @@ export default function Form() {
 		<>
 			<>
 				<dialog className={styles.modal} ref={modalRef}>
-					<div className={styles.modal}>
+					<div className={styles.container}>
 						<div className={styles.menu}>
 							<img src="/logo-sm.svg" alt="" />
 
@@ -167,7 +167,7 @@ export default function Form() {
 
 					<select
 						required
-						value={details.business}
+						value={details.package}
 						name="package"
 						onChange={handleChange}
 						disabled={loading}
@@ -192,6 +192,8 @@ export default function Form() {
 					</button>
 				</form>
 			</div>
+
+			<button onClick={() => modalRef.current?.showModal()}>open</button>
 		</>
 	);
 }
