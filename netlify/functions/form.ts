@@ -20,8 +20,8 @@ const transporter = nodemailer.createTransport({
 const sendMail = async (text: string) => {
 	const mailOptions = {
 		from: "traveleyes.web@gmail.com",
-		// to: "info@traveleyes.in",
-		to: "rohanverma031@gmail.com",
+		to: "info@traveleyes.in",
+		// to: "rohanverma031@gmail.com",
 		subject: "Form Submission",
 		text,
 	};
